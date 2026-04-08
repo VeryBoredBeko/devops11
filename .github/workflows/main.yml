@@ -31,11 +31,11 @@ jobs:
 
     # 2. SAST - Статический анализ кода (Bandit)
     - name: Static Analysis Security Test (Bandit)
-      run: bandit -r . -x ./tests -f txt
+      run: bandit -r . -x ./venv,./env,./tests,./.github -f txt
 
     # 3. Запуск тестов
     - name: Run Unit Tests
-      run: pytest
+      run: python -m pytest tests/
 
   build-and-push:
     needs: security-and-tests
