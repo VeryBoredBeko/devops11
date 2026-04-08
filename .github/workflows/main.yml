@@ -31,7 +31,7 @@ jobs:
 
     # 2. SAST - Статический анализ кода (Bandit)
     - name: Static Analysis Security Test (Bandit)
-      run: bandit -r . -f txt
+      run: bandit -r . -x ./tests -f txt
 
     # 3. Запуск тестов
     - name: Run Unit Tests
